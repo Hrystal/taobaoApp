@@ -3,7 +3,14 @@ body{
 	font-size: 16px;
 	background-color: #EEEEEE;
 }
+ul{
+	list-style: none;
+}
 .headerWrap{
+	position: fixed;
+	top: 0;
+	z-index: 300;
+	width: 100%;
 	height: .5rem;
 	background-color: #f40;
 	display: flex;
@@ -51,7 +58,13 @@ body{
 	height: .16rem;
 	margin-top: .06rem;
 }
+.blankWrap{
+	width: 100%;
+	height: .5rem;
+}
+/*--轮播--*/
 .playWrap{
+	margin-top: .5rem;
 	width: 100%;
 	height: 1.34rem;
 	background: #fff;
@@ -76,3 +89,89 @@ body{
  	width: 100%;
  	height: 100%;
  }
+ /*--导航图标--*/
+.navWrap{
+	height: 1.85rem;
+	background: #fff;
+	margin-top: .1rem;
+}
+.navBtn{
+	height: .9rem;
+	margin-top: .05rem;
+}
+.navBtn ul{
+	height:.9rem;
+	display: flex;
+	justify-content:space-around;
+}
+.navBtn ul li{
+	width:.65rem;
+	height: .9rem;
+	font-size: .13rem;
+	color: #5E5E5E;
+	text-align: center;
+}
+.navBtn ul li img{
+	margin-top: .1rem;
+	width:.55rem;
+	height: .55rem;
+}
+/*--推荐信息--*/
+.newsWrap{
+	height: 2rem;
+	background: #fff;
+	margin-top: .1rem;
+	display: flex;
+	flex-direction:row;
+}
+.newsLeft{
+	width: 1.6rem;
+	height: 2rem;
+	overflow: hidden;
+}
+.newsLeft img{
+	width: 1.6rem;
+	height: 2rem;
+}
+.newsRight{
+	width: 2.5rem;
+	height: 2rem;
+	display: flex;
+	flex-flow: column;
+}
+.newsRight-t img{
+	width: 2.5rem;
+	height: .8rem;
+}
+.newsRight-b img{
+	width: 1.2rem;
+	height: 1.1rem;
+}
+/*--固定页脚--*/
+footer{
+    position: fixed;
+    z-index: 300;
+    bottom: 0;
+    width: 100%;
+    height: .65rem;
+    background: #fff;
+    border-top: 1px solid  #ccc;
+}
+footer ul{
+	height: .5rem;
+	display: flex;
+	justify-content:space-around;
+	
+}
+footer ul li{
+	width: .5rem;
+	height: .65rem;
+	color: #5E5E5E;
+	font-size: .14rem;
+	text-align: center;
+}
+footer ul li img{
+	margin-top:.1rem;
+	width: .25rem;
+	height: .25rem;
+}
