@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="inedex.css"/>
+		<link rel="stylesheet" type="text/css" href="swiper.min.css"/>
+	</head>
+	<body>
+		<!--头部-->
+		<div class="headerWrap">
+			<div class="headerLeft">
+				<img src="img/效果图1_03.png"/>
+				<p>扫一扫</p>
+			</div>
+			<div class="headerSou">
+				<div class="souTxt">
+					<img src="img/效果图1_09.png"/>
+					<span>搜索</span>
+				</div>
+			</div>
+			<div class="headerRight">
+				<img src="img/效果图1_06.png"/>
+				<p>消息</p>
+			</div>
+		</div>
+		<!--轮播-->
+		<div class="playWrap swiper-container">
+			 <div class="swiper-wrapper">
+			      <div class="swiper-slide"><img src="img/carouselBox61.jpg"/></div>
+			      <div class="swiper-slide"><img src="img/carouselBox62.jpg"/></div>
+			      <div class="swiper-slide"><img src="img/carouselBox63.jpg"/></div>
+			   </div>
+			    <!-- Add Pagination -->
+   			 <div class="swiper-pagination"></div>
+		</div>
+		<!--图标-->
+		<div class="">
+			
+		</div>
+	</body>
+	<script src="swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		function rem (doc, win) {  
+			  let docEl = doc.documentElement; //html 考虑以及兼容了 屏幕旋转的事件
+			  //判断事件orientationchange 横屏 事件  或resize 
+			  let resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';  
+			  
+			  		let recalc = function () {         
+			  			var clientWidth = docEl.clientWidth;   //获取屏幕大小
+			  			if (!clientWidth){ return };   //未获取屏幕尺寸        
+			  			//屏幕大于750
+			  			if (clientWidth >= 403) {
+			                 docEl.style.fontSize = '100px';
+			            } else {
+//			            	html的font-size         100*   设备宽度    / 设计图750
+			                 docEl.style.fontSize = 100*(clientWidth / 403)+ 'px';
+			            }
+			      };   
+			      if (!doc.addEventListener) {return ;}//addEventListener 兼容判断
+  
+			    win.addEventListener(resizeEvt, recalc, false);               // 屏幕大小以及旋转变化自适应
+			    doc.addEventListener('DOMContentLoaded', recalc, false);     // 页面初次打开自适应
+			    recalc();
+			}
+			
+				rem(document,window);
+				
+				
+		var swiper = new Swiper('.swiper-container', {
+			      spaceBetween: 30,
+			      centeredSlides: true,
+			      autoplay: {
+			        delay: 2500,
+			        disableOnInteraction: false,
+			      },
+			      pagination: {
+			        el: '.swiper-pagination',
+			        clickable: true,
+			      },
+			    });
+	</script>
+</html>
