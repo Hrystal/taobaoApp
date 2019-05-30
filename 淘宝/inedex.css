@@ -147,6 +147,33 @@ ul{
 	width: 1.2rem;
 	height: 1.1rem;
 }
+.goodsNav{
+	margin-top: .1rem;
+	width: 100%;
+	height: .5rem;
+	background-color: #9C9FAE;
+}
+.goodsNav ul{
+	height: .5rem;
+	display: flex;
+	text-align: center;
+}
+.goodsNav ul li{
+	font-weight:bold ;
+	font-size: .13rem;
+}
+.goodsLi{
+	width: 1.1rem;
+	border-right: 1px solid #5E5E5E;
+	line-height: .5rem;
+}
+.goodsLis{
+	width: .8rem;
+	line-height: .5rem;
+}
+.goodsLis{
+	
+}
 /*--固定页脚--*/
 footer{
     position: fixed;
