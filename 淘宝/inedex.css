@@ -180,6 +180,11 @@ ul{
 	display: flex;
 	justify-content: space-around;
 }
+.goodsList img{
+	width: 1.86rem;
+	height: 1.86rem;
+	border-radius:7px;
+}
 .goodsList_l{
 	width: 1.86rem;
 	height: 2.86rem;
@@ -190,6 +195,7 @@ ul{
 	height: 2.86rem;
 	background: skyblue;
 }
+
 /*--固定页脚--*/
 footer{
     position: fixed;
