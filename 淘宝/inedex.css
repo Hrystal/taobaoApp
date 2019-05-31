@@ -118,7 +118,7 @@ ul{
 }
 /*--推荐信息--*/
 .newsWrap{
-	height: 2rem;
+	height: 2.08rem;
 	background: #fff;
 	margin-top: .1rem;
 	display: flex;
@@ -151,7 +151,7 @@ ul{
 	margin-top: .1rem;
 	width: 100%;
 	height: .5rem;
-	background-color: #9C9FAE;
+	background-color: #f40;
 }
 .goodsNav ul{
 	height: .5rem;
@@ -160,19 +160,35 @@ ul{
 }
 .goodsNav ul li{
 	font-weight:bold ;
+	border-top:1px solid #E2E2E2 ;
+	border-bottom: 1px solid #E2E2E2;
 	font-size: .13rem;
 }
 .goodsLi{
 	width: 1.1rem;
-	border-right: 1px solid #5E5E5E;
+	border-right: 1px solid #E2E2E2;
 	line-height: .5rem;
 }
 .goodsLis{
 	width: .8rem;
 	line-height: .5rem;
 }
-.goodsLis{
-	
+.goodsList{
+	margin-top: .1rem;
+	width: 100%;
+	background: #fff;
+	display: flex;
+	justify-content: space-around;
+}
+.goodsList_l{
+	width: 1.86rem;
+	height: 2.86rem;
+	background: skyblue;
+}
+.goodsList_r{
+	width: 1.86rem;
+	height: 2.86rem;
+	background: skyblue;
 }
 /*--固定页脚--*/
 footer{
