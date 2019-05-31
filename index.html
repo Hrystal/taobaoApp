@@ -137,19 +137,39 @@
 					</li>
 				</ul>
 			</div>
-			<div class="goodsList">
-				<div class="goodsList_l">
+			<div class="goodsListWrap">
+				<!--<div class="goodsList">
 					<img src="img/pic1.png"/>
-					<p>1</p>
-					<p>¥：168</p>
-					<p><span>月销量6笔</span><span>免邮费</span></p>
+					<p>询彧短袖T恤男夏季韩版潮流大码短袖男士半袖t恤</p>
+					<div class="goodsPrice">
+						<p>¥：168</p>
+						<p><span>月销量0笔</span><span>免邮费</span></p>
+					</div>
 				</div>
-				<div class="goodsList_r">
+				<div class="goodsList">
 					<img src="img/pic1.png"/>
-					<p>1</p>
-					<p>1</p>
-					<p>1</p>
+					<p>询彧短袖T恤男夏季韩版潮流大码短袖男士半袖t恤</p>
+					<div class="goodsPrice">
+						<p>¥：168</p>
+						<p><span>月销量0笔</span><span>免邮费</span></p>
+					</div>
 				</div>
+				<div class="goodsList">
+					<img src="img/pic1.png"/>
+					<p>询彧短袖T恤男夏季韩版潮流大码短袖男士半袖t恤</p>
+					<div class="goodsPrice">
+						<p>¥：168</p>
+						<p><span>月销量0笔</span><span>免邮费</span></p>
+					</div>
+				</div>
+				<div class="goodsList">
+					<img src="img/pic1.png"/>
+					<p>询彧短袖T恤男夏季韩版潮流大码短袖男士半袖t恤</p>
+					<div class="goodsPrice">
+						<p>¥：168</p>
+						<p><span>月销量0笔</span><span>免邮费</span></p>
+					</div>
+				</div>-->
 			</div>
 			<!--页脚导航-->
 			<footer>
@@ -177,6 +197,8 @@
              	</ul>
          </footer>
 	</body>
+	<script src="jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="ajax.js" type="text/javascript" charset="utf-8"></script>
 	<script src="swiper.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
 		function rem (doc, win) {  
@@ -217,5 +239,45 @@
 			        clickable: true,
 			      },
 			    });
+			    
+			    
+		$.ajax({
+				url:"https://api.ymduo.com/Interface/recommendlists",
+				type:"post",
+				data:{},
+				datatype:"json",
+				success:function(res){
+					//res---返回的数据
+				console.log(res);
+				
+				var arr=res.result.data;
+				console.log(arr)
+				var str="";
+				for(i=0;i<arr.length;i++){
+					
+					str+='<div class="goodsList" pid="'+arr[i].goods_id+'">'
+							+'<img src="'+arr[i].image+'"/>'
+							+'<p class="list_p">'+arr[i].goods_name+'</p>'
+							+'<div class="goodsPrice">'
+								+'<p>¥：'+arr[i].price+'</p>'
+								+'<p><span>月销量0笔</span><span>免邮费</span></p>'
+							+'</div>'
+						+'</div>'
+					
+				}
+				var lists=document.querySelector(".goodsListWrap");
+					lists.innerHTML=str;
+				
+				
+				
+			}
+				
+				
+				
+				
+				
+				
+				
+		})	    
 	</script>
 </html>
