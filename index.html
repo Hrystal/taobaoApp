@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_1125618_e1h6e6sqgx6.css"/>
+		<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_1221563_igosuvf3n6.css"/>
 		<link rel="stylesheet" type="text/css" href="inedex.css"/>
 		<link rel="stylesheet" type="text/css" href="swiper.min.css"/>
 	</head>
@@ -133,7 +133,7 @@
 						筛选
 					</li>
 					<li class="goodsLis">
-						<i class="iconfont icon-mulu"></i>
+						<i class="iconfont icon-liebiao"></i>
 					</li>
 				</ul>
 			</div>
@@ -227,7 +227,7 @@
 				rem(document,window);
 				
 		//轮播		
-		var swiper = new Swiper('.swiper-container', {
+		var swiper = new Swiper('.playWrap', {
 			      spaceBetween: 30,
 			      centeredSlides: true,
 			      autoplay: {
@@ -253,26 +253,35 @@
 				var arr=res.result.data;
 				console.log(arr)
 				var str="";
-				for(i=0;i<arr.length;i++){
+				$.each(arr,function(index,ele){
 					
-					str+='<div class="goodsList" pid="'+arr[i].goods_id+'">'
-							+'<img src="'+arr[i].image+'"/>'
-							+'<p class="list_p">'+arr[i].goods_name+'</p>'
+					str+='<div class="goodsList" pid="'+ele.goods_id+'">'
+							+'<img src="'+ele.image+'"/>'
+							+'<p class="list_p">'+ele.goods_name+'</p>'
 							+'<div class="goodsPrice">'
-								+'<p>¥：'+arr[i].price+'</p>'
+								+'<p>¥：'+ele.price+'</p>'
 								+'<p><span>月销量0笔</span><span>免邮费</span></p>'
 							+'</div>'
 						+'</div>'
 					
-				}
-				var lists=document.querySelector(".goodsListWrap");
-					lists.innerHTML=str;
+					
+					
+					
+				});
+					
+				$(".goodsListWrap").html(str);
+				
+				$(".goodsList").click(function(){
+					
+					var pid=$(this).attr("pid");
+					
+					location.href="details.html?pid="+pid;
+					
+				})
 				
 				
 				
 			}
-				
-				
 				
 				
 				

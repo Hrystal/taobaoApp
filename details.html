@@ -9,8 +9,66 @@
 		<link rel="stylesheet" type="text/css" href="details.css"/>
 	</head>
 	<body>
-		<div class="playWrap">
-			<img src="img/pic1.png"/>
+		<!--轮播-->
+		<div class="playWrap swiper-container">
+			 <div class="swiper-wrapper">
+			      <div class="swiper-slide"><img src="img/carouselBox61.jpg"/></div>
+			      <div class="swiper-slide"><img src="img/carouselBox62.jpg"/></div>
+			      <div class="swiper-slide"><img src="img/carouselBox63.jpg"/></div>
+			   </div>
+			    <!-- Add Pagination -->
+   			 <div class="swiper-pagination"></div>
 		</div>
+		
 	</body>
+	<script src="jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="ajax.js" type="text/javascript" charset="utf-8"></script>
+	<script src="swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		function rem (doc, win) {  
+			  let docEl = doc.documentElement; //html 考虑以及兼容了 屏幕旋转的事件
+			  //判断事件orientationchange 横屏 事件  或resize 
+			  let resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';  
+			  
+			  		let recalc = function () {         
+			  			var clientWidth = docEl.clientWidth;   //获取屏幕大小
+			  			if (!clientWidth){ return };   //未获取屏幕尺寸        
+			  			//屏幕大于750
+			  			if (clientWidth >= 1242) {
+			                 docEl.style.fontSize = '100px';
+			            } else {
+//			            	html的font-size         100*   设备宽度    / 设计图750
+			                 docEl.style.fontSize = 100*(clientWidth / 1242)+ 'px';
+			            }
+			      };   
+			      if (!doc.addEventListener) {return ;}//addEventListener 兼容判断
+  
+			    win.addEventListener(resizeEvt, recalc, false);               // 屏幕大小以及旋转变化自适应
+			    doc.addEventListener('DOMContentLoaded', recalc, false);     // 页面初次打开自适应
+			    recalc();
+			}
+			
+				rem(document,window);
+			
+			//轮播		
+		var swiper = new Swiper('.playWrap', {
+			      spaceBetween: 30,
+			      centeredSlides: true,
+			      autoplay: {
+			        delay: 2500,
+			        disableOnInteraction: false,
+			      },
+			      pagination: {
+			        el: '.swiper-pagination',
+			        clickable: true,
+			      },
+			    });
+			
+			
+			
+			
+			
+			
+			
+		</script>
 </html>

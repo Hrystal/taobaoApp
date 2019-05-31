@@ -6,3 +6,11 @@ body{
 ul{
 	list-style: none;
 }
+.playWrap{
+	width: 100%;
+	height: 12.42rem;
+}
+.playWrap img{
+	width: 100%;
+	height: 12.42rem;
+}
