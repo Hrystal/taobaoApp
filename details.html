@@ -38,28 +38,28 @@
 				<span>快递：0</span><span>月销：0</span><span>广东广州</span>
 			</div>
 		</div>
-		<div class="">
+		<div class="big_img">
 			
 		</div>
 		<!--页脚导航-->
 			<footer>
              	<ul>
-             		<li>
-             			<i class="iconfont icon-wangwang"></i>
-             			<p style="color: #f40;">客服</p>
+             		<li class="fll">
+             			<i class="iconfont icon-wangwang" style="color: skyblue;"></i>
+             			<p>客服</p>
              		</li>
-             		<li>
+             		<li class="fll">
              			<i class="iconfont icon-dianpu"></i>
              			<p>店铺</p>
              		</li>
-             		<li>
+             		<li class="fll">
              			<i class="iconfont icon-unie601"></i>
-             			<p>收藏<s>
+             			<p>收藏<p>
              		</li>
-             		<li>
+             		<li class="frr" style="background: #fe9402;">
              			<p>加入购物车</p>
              		</li>
-             		<li>
+             		<li class="frr" style="background: #fe0036;">
              			<p>立即购买</p>
              		</li>
              	</ul>
@@ -148,6 +148,12 @@
 					nowpirce.innerHTML="￥"+infoData.price;
 					var old_price=document.querySelector(".old_price s");
 					old_price.innerHTML="￥"+infoData.old_price;
+					
+					//详情图片
+					var bigimg=document.querySelector(".big_img");
+					bigimg.innerHTML=infoData.detail.in_detail;
+					
+					
 			
 			})
 			

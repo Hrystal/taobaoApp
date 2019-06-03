@@ -122,36 +122,42 @@ ul{
 	background: #fff;
 	margin-top: .1rem;
 	display: flex;
-	flex-direction:row;
+	/*flex-direction:row;*/
 }
 .newsLeft{
 	width: 1.6rem;
 	height: 2rem;
-	overflow: hidden;
 }
 .newsLeft img{
 	width: 1.6rem;
 	height: 2rem;
 }
 .newsRight{
-	width: 2.5rem;
-	height: 2rem;
+	flex: 1;
 	display: flex;
 	flex-flow: column;
 }
-.newsRight-t img{
-	width: 2.5rem;
+.newsRight-t{
 	height: .8rem;
 }
+.newsRight-t img{
+	width: 100%;
+	height: .8rem;
+}
+.newsRight-b{
+	display: flex;
+	flex:1;
+}
 .newsRight-b img{
-	width: 1.2rem;
+	width: 50%;
 	height: 1.1rem;
 }
 .goodsNav{
 	margin-top: .1rem;
 	width: 100%;
 	height: .5rem;
-	background-color: #e7e7e7;
+	background-color: #EEEEEE;
+	border: 1px solid #E7E7E7;
 }
 .goodsNav ul{
 	height: .5rem;
@@ -160,8 +166,6 @@ ul{
 }
 .goodsNav ul li{
 	font-weight:bold ;
-	border-top:1px solid #E2E2E2 ;
-	border-bottom: 1px solid #E2E2E2;
 	font-size: .13rem;
 }
 .goodsLi{
@@ -182,6 +186,7 @@ ul{
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
+	margin-bottom: .7rem;
 }
 
 .goodsList{
@@ -213,6 +218,10 @@ ul{
 .goodsPrice p:nth-child(2){
 	color: #b5b5b5;
 }
+
+
+
+
 /*--固定页脚--*/
 footer{
     position: fixed;
