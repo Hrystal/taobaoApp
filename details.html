@@ -34,36 +34,10 @@
 					<i class="iconfont icon-iconfontzhizuobiaozhun023130"></i>
 				</div>
 			</div>
-			<div class="priceWrap_b">
-				<span>快递：0</span><span>月销：0</span><span>广东广州</span>
+			<div class="">
+				<span></span><span></span><span></span>
 			</div>
 		</div>
-		<div class="">
-			
-		</div>
-		<!--页脚导航-->
-			<footer>
-             	<ul>
-             		<li>
-             			<i class="iconfont icon-wangwang"></i>
-             			<p style="color: #f40;">客服</p>
-             		</li>
-             		<li>
-             			<i class="iconfont icon-dianpu"></i>
-             			<p>店铺</p>
-             		</li>
-             		<li>
-             			<i class="iconfont icon-unie601"></i>
-             			<p>收藏<s>
-             		</li>
-             		<li>
-             			<p>加入购物车</p>
-             		</li>
-             		<li>
-             			<p>立即购买</p>
-             		</li>
-             	</ul>
-         </footer>
 	</body>
 	<script src="jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="ajax.js" type="text/javascript" charset="utf-8"></script>
@@ -110,6 +84,21 @@
 			var goods_id=getQueryString("pid");
 			console.log(goods_id)//商品id
 			
+//			$.ajax({
+//				url:"https://api.ymduo.com/item/index",
+//				type:"post",
+////				data:{},
+////				datatype:"json",
+//			success:function(res){
+//				console.log(res);
+//				var infoarr=res.result.data;
+//				console.log(infoarr);
+////				var str='';
+////				$.each(infoarr, function(index,ele) {
+////					//过滤数据 数据中pid==上个页面传来的pid
+////					if(ele.goods_id==goods_id){
+////						str=infoarr[index]
+////						console.log(str);
 					
 					ajax("post","https://api.ymduo.com/item/index","gid="+goods_id,true,function(res){
 						
@@ -117,6 +106,14 @@
 						var infoData=arr.result.data;
 						console.log(infoData);
 						
+					//轮播图	
+//					var imgStr="";
+//					$.each(infoData,function(index,ele){
+//						
+//						imgStr+='<div class="swiper-slide"><img src="'+ele.image+'"/></div>'
+//						
+//					})
+//						$(".swiper-wrapper").html(imgStr);
 					var imgStr="";
 					for(i=0;i<infoData.image.length;i++){
 						imgStr+='<div class="swiper-slide"><img src="'+infoData.image[i]+'"/></div>'
@@ -139,15 +136,8 @@
 						      },
 					 });
 					 
-					//商品名 
-					var shopname=document.querySelector(".pname span");
-					shopname.innerHTML=infoData.goods_name;
+					 
 					
-					//现价 原价
-					var nowpirce=document.querySelector(".now_price");
-					nowpirce.innerHTML="￥"+infoData.price;
-					var old_price=document.querySelector(".old_price s");
-					old_price.innerHTML="￥"+infoData.old_price;
 			
 			})
 			
