@@ -25,8 +25,6 @@
 	<script src="ajax.js" type="text/javascript" charset="utf-8"></script>
 	<script src="swiper.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
-		$(function(){
-			
 		function rem (doc, win) {  
 			  let docEl = doc.documentElement; //html 考虑以及兼容了 屏幕旋转的事件
 			  //判断事件orientationchange 横屏 事件  或resize 
@@ -67,70 +65,10 @@
 			    });
 			
 			
-			//正则获取参数
-		function getQueryString(name) {
-	       var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-	       var r = window.location.search.substr(1).match(reg);
-	       if(r != null) {
-	             return decodeURIComponent(r[2]);
-	       }
-	       return '';
-		}
-			//获取search值中的pid(商品id)
-			var goods_id=getQueryString("pid");
-			console.log(goods_id)//商品id
-			
-			$.ajax({
-				url:"https://api.ymduo.com/item/index",
-				type:"post",
-				data:{},
-				datatype:"json",
-			success:function(res){
-					
-				console.log(res);
-				var infoarr=res.result.data;
-//				console.log(infoarr);
-				var str='';
-				$.each(infoarr, function(index,ele) {
-					//过滤数据 数据中pid==上个页面传来的pid
-					if(ele.goods_id==goods_id){
-						str=infoarr[index]
-						console.log(str);
-					
-					var imgStr="";
-					$.each(str,function(index,ele){
-						
-//						imgStr+='<div class="swiper-slide"><img src="'+ele.image+'"/></div>'
-						
-					})
-//						$(".swiper-wrapper").html(imgStr);
-			
-			
-					}
-					
-				})
-				
-				
-			}
-			
-			
-			
-				
-				
-				
-				
-				
-				
-			
-				
-			})
 			
 			
 			
 			
 			
-			
-			
-		});		
-	</script>
+		</script>
 </html>
